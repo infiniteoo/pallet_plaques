@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     
       <html lang="en">
         <head>
-        <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+        
         </head>
         <body className={inter.className}>{children}</body>
        
