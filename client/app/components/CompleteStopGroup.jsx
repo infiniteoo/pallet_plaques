@@ -4,14 +4,51 @@ import OrderNumberInput from "./OrderNumberInput";
 import AddStopButton from "./AddStopButton";
 import StopNumber from "./StopNumber";
 
-const CompleteStopGroup = ({numberOfStops, setNumberOfStops}) => {
+const CompleteStopGroup = ({
+  numberOfStops,
+  setNumberOfStops,
+  stop,
+  setDefinedStops,
+  definedStops,
+}) => {
   return (
     <>
-      <StopNumber numberOfStops={numberOfStops} />
-      <StoreNameDropDown />
-      <NumberOfPalletsDropDown />
-      <OrderNumberInput />
-      <AddStopButton numberOfStops={numberOfStops} setNumberOfStops={setNumberOfStops} />
+      <StopNumber numberOfStops={numberOfStops}
+      setNumberOfStops={setNumberOfStops}
+      stop={stop}
+      setDefinedStops={setDefinedStops}
+      definedStops={definedStops} />
+      <StoreNameDropDown
+      
+      numberOfStops={numberOfStops}
+      setNumberOfStops={setNumberOfStops}
+      stop={stop}
+      setDefinedStops={setDefinedStops}
+      definedStops={definedStops}/>
+      <NumberOfPalletsDropDown 
+      numberOfStops={numberOfStops}
+      setNumberOfStops={setNumberOfStops}
+      stop={stop}
+      setDefinedStops={setDefinedStops}
+      definedStops={definedStops}
+      
+      
+      />
+      <OrderNumberInput 
+      numberOfStops={numberOfStops}
+      setNumberOfStops={setNumberOfStops}
+      stop={stop}
+      setDefinedStops={setDefinedStops}
+      definedStops={definedStops}
+      
+      />
+      <AddStopButton
+        numberOfStops={numberOfStops}
+        setNumberOfStops={setNumberOfStops}
+        stop={stop}
+        setDefinedStops={setDefinedStops}
+        definedStops={definedStops}
+      />
     </>
   );
 };

@@ -1,13 +1,13 @@
 import React from "react";
 
-const StopNumber = ({numberOfStops}) => {
+const StopNumber = ({numberOfStops, stop}) => {
   return (
     <>
       <label
         htmlFor="stopNumber"
         style={{ fontSize: "20px", fontWeight: "bold" }}
       >
-        {numberOfStops ? numberOfStops + "." : "1."}
+        {stop ? stop + "." : "1."}
       </label>
     </>
   );

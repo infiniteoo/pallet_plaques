@@ -1,7 +1,7 @@
 import React from "react";
 import AddIcon from "@mui/icons-material/Add";
 
-const AddStopButton = ({ numberOfStops, setNumberOfStops }) => {
+const AddStopButton = ({ numberOfStops, setNumberOfStops, stop }) => {
   return (
     <div>
       <label
@@ -18,7 +18,7 @@ const AddStopButton = ({ numberOfStops, setNumberOfStops }) => {
           setNumberOfStops(numberOfStops + 1);
         }}
       >
-        Hello World
+        
       </AddIcon>
     </div>
   );
