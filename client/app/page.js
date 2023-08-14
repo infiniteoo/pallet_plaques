@@ -1,6 +1,7 @@
 "use client";
 
 import CompleteStopGroup from "./components/CompleteStopGroup.jsx";
+import SubmitButton from "./components/SubmitButton.jsx";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -30,8 +31,9 @@ export default function Home() {
             />
           </div>
         ))}
+        <SubmitButton definedStops={definedStops} />
       </div>
-      {/* Other elements... */}
+     
     </main>
   );
 }
