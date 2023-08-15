@@ -28,7 +28,7 @@ const SubmitButton = ({ definedStops }) => {
   return (
     <div>
       <button
-        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition duration-300 ease-in-out mt-5"
+        className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition duration-300 ease-in-out mt-5"
         onClick={handleSubmit}
       >
         Generate PDF
@@ -37,14 +37,14 @@ const SubmitButton = ({ definedStops }) => {
         <div>
           <p>PDF generated! Choose an option:</p>
           <button
-        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition duration-300 ease-in-out mt-5">
+        className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition duration-300 ease-in-out mt-5">
           <a href={pdfData} target="_blank" rel="noopener noreferrer">
             View PDF
           </a>{" "}
           </button>
           {" "}
           <button
-        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition duration-300 ease-in-out mt-5">
+        className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition duration-300 ease-in-out mt-5">
           <a
             href={pdfData}
             download="export.pdf"
