@@ -18,6 +18,7 @@ export default function StoreNameDropDown({
   definedStops,
 }) {
   const [selected, setSelected] = useState(storeNames[3]);
+  const stopIndex = stop.stopNumber - 1; // Assuming stops are 1-indexed
 
   return (
     <>
@@ -26,14 +27,28 @@ export default function StoreNameDropDown({
         onChange={(selected) => {
           setSelected(selected);
           console.log('STOP', stop)
-          let newStop = {
+
+
+          setDefinedStops((prevDefinedStops) => {
+            const updatedStops = [...prevDefinedStops];
+            updatedStops[stopIndex] = {
+              ...updatedStops[stopIndex],
+              storeName: selected.name
+            };
+            return updatedStops;
+          })
+
+
+
+
+          /* let newStop = {
             stopNumber: numberOfStops ? numberOfStops : 1,
             storeName: selected.name ? selected.name : "",
             numberOfPallets: stop.numberOfPallets ? stop.numberOfPallets : 0,
             orderNumber: stop.orderNumber ? stop.orderNumber : "",
           };
 
-          numberOfStops === 1 ? setDefinedStops([newStop]) : setDefinedStops([...definedStops, newStop]); 
+          numberOfStops === 1 ? setDefinedStops([newStop]) : setDefinedStops([...definedStops, newStop]);  */
 
 
           
