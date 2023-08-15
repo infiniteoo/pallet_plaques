@@ -4,8 +4,8 @@
   "description": "Example project to showcase rendering pdfs on the backend with React-PDF",
   "main": "index.ts",
   "scripts": {
-    "serve": "nodemon src/index.ts",
-    "build": "tsc --build",
+    "serve": "nodemon src/index.js",
+    "build": "./client/next build",
     "serve:build": "node build/index.js",
     "start": "concurrently \"npm:serve\" \"cd client && npm run dev\""
   },
