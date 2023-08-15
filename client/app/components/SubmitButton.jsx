@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 const SubmitButton = ({ definedStops }) => {
   const handleSubmit = () => {
@@ -7,12 +8,7 @@ const SubmitButton = ({ definedStops }) => {
     // iterate through definedStops array and send an axios request for each stop to the server on port 8000
 
     axios
-      .post("http://localhost:8000/api/stops", {
-        storeName: storeName,
-        numberOfPallets: numberOfPallets,
-        orderNumber: orderNumber,
-        stopNumber: stopNumber,
-      })
+      .post("http://localhost:8000/api/stops", definedStops)
       .then((res) => {
         console.log(res);
         console.log(res.data);

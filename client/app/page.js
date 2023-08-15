@@ -48,7 +48,7 @@ export default function Home() {
         {/* Map each stop to a new row */}
         {definedStops.map((stop) => (
           <div
-            key={stop}
+            key={stop.stopNumber}
             className="flex flex-row items-center justify-between w-full"
           >
             <CompleteStopGroup
