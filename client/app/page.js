@@ -3,6 +3,7 @@
 import CompleteStopGroup from "./components/CompleteStopGroup.jsx";
 import SubmitButton from "./components/SubmitButton.jsx";
 import { useState, useEffect } from "react";
+import GitHubIcon from '@mui/icons-material/GitHub';
 import GXOLogo from "./components/assets/GXO_logo.png"; // Import the logo image
 
 export default function Home() {
@@ -70,6 +71,32 @@ export default function Home() {
           </div>
         ))}
         <SubmitButton definedStops={definedStops} />
+        {/* GitHub repo link */}
+        <div className="flex items-center mt-4">
+        <GitHubIcon
+        variant="contained"
+        style={{ fontSize: "35px" }}
+        onClick={() => {
+          window.open("http://www.google.com");
+        }}
+        /* on hover make the mouse icon change to a finger */
+        onMouseOver={(e) => {
+          e.target.style.cursor = "pointer";
+        }}
+        
+
+
+          
+       
+      >
+        
+       
+      </GitHubIcon>
+
+         <label>
+        View on GitHub
+        </label>
+        </div>
       </div>
     </main>
   );
