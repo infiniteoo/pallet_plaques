@@ -2,7 +2,7 @@
   "name": "sample",
   "version": "1.0.0",
   "description": "Example project to showcase rendering pdfs on the backend with React-PDF",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "serve": "nodemon src/index.js",
     "build": "./client/npm run build",
