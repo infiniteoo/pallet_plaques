@@ -13,34 +13,33 @@ const CompleteStopGroup = ({
 }) => {
   return (
     <>
-      <StopNumber numberOfStops={numberOfStops}
-      setNumberOfStops={setNumberOfStops}
-      stop={stop}
-      setDefinedStops={setDefinedStops}
-      definedStops={definedStops} />
-      <StoreNameDropDown
-      
-      numberOfStops={numberOfStops}
-      setNumberOfStops={setNumberOfStops}
-      stop={stop}
-      setDefinedStops={setDefinedStops}
-      definedStops={definedStops}/>
-      <NumberOfPalletsDropDown 
-      numberOfStops={numberOfStops}
-      setNumberOfStops={setNumberOfStops}
-      stop={stop}
-      setDefinedStops={setDefinedStops}
-      definedStops={definedStops}
-      
-      
+      <StopNumber
+        numberOfStops={numberOfStops}
+        setNumberOfStops={setNumberOfStops}
+        stop={stop.stopNumber}
+        setDefinedStops={setDefinedStops}
+        definedStops={definedStops}
       />
-      <OrderNumberInput 
-      numberOfStops={numberOfStops}
-      setNumberOfStops={setNumberOfStops}
-      stop={stop}
-      setDefinedStops={setDefinedStops}
-      definedStops={definedStops}
-      
+      <StoreNameDropDown
+        numberOfStops={numberOfStops}
+        setNumberOfStops={setNumberOfStops}
+        stop={stop}
+        setDefinedStops={setDefinedStops}
+        definedStops={definedStops}
+      />
+      <NumberOfPalletsDropDown
+        numberOfStops={numberOfStops}
+        setNumberOfStops={setNumberOfStops}
+        stop={stop}
+        setDefinedStops={setDefinedStops}
+        definedStops={definedStops}
+      />
+      <OrderNumberInput
+        numberOfStops={numberOfStops}
+        setNumberOfStops={setNumberOfStops}
+        stop={stop}
+        setDefinedStops={setDefinedStops}
+        definedStops={definedStops}
       />
       <AddStopButton
         numberOfStops={numberOfStops}
