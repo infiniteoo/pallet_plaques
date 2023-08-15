@@ -1,27 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 const SubmitButton = ({ definedStops }) => {
-  const handleSubmit = () => {
+  const [pdfData, setPdfData] = useState(null);
+
+  const handleSubmit = async () => {
     console.log("Submit button clicked");
 
-    // iterate through definedStops array and send an axios request for each stop to the server on port 8000
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/api/stops",
+        definedStops,
+        {
+          responseType: "blob", // Request the response as binary data
+        }
+      );
 
-    axios
-      .post("http://localhost:8000/api/stops", definedStops)
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-      });
+      const pdfBlob = new Blob([response.data], { type: "application/pdf" });
+      const pdfUrl = URL.createObjectURL(pdfBlob);
+
+      setPdfData(pdfUrl);
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+    }
   };
 
   return (
-    <button
-      className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition duration-300 ease-in-out mt-5"
-      onClick={handleSubmit}
-    >
-      Generate PDF
-    </button>
+    <div>
+      <button
+        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition duration-300 ease-in-out mt-5"
+        onClick={handleSubmit}
+      >
+        Generate PDF
+      </button>
+      {pdfData && (
+        <div>
+          <p>PDF generated! Choose an option:</p>
+          <a href={pdfData} target="_blank" rel="noopener noreferrer">
+            View PDF
+          </a>{" "}
+          |{" "}
+          <a
+            href={pdfData}
+            download="export.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download PDF
+          </a>
+        </div>
+      )}
+    </div>
   );
 };
 
