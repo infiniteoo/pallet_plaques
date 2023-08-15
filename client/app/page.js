@@ -18,19 +18,24 @@ export default function Home() {
   }]);
 
   useEffect(() => {
-    let temp = [];
-    for (let i = 1; i <= numberOfStops; i++) {
-      // Generate a new stop object for each stop number
-      const newStop = {
-        stopNumber: i,
-        storeName: "",
-        numberOfPallets: 0,
-        orderNumber: "",
-      };
-      temp.push(newStop);
+    if (numberOfStops > definedStops.length) {
+      const newStopsCount = numberOfStops - definedStops.length;
+      let newStops = [];
+  
+      for (let i = 1; i <= newStopsCount; i++) {
+        const newStop = {
+          stopNumber: definedStops.length + i,
+          storeName: "",
+          numberOfPallets: 0,
+          orderNumber: "",
+        };
+        newStops.push(newStop);
+      }
+  
+      setDefinedStops((prevDefinedStops) => [...prevDefinedStops, ...newStops]);
     }
-    setDefinedStops(temp);
   }, [numberOfStops]);
+  
 
   useEffect(() => {
     console.log("definedStops after update", definedStops);
