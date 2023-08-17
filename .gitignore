@@ -1,4 +1,4 @@
 node_modules
 build
-# static folder for DigitalOcean App Platform
 _static
+client/_static
