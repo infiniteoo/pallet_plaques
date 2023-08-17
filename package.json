@@ -2,10 +2,10 @@
   "name": "sample",
   "version": "1.0.0",
   "description": "Example project to showcase rendering pdfs on the backend with React-PDF",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
-    "serve": "nodemon src/index.ts",
-    "build": "tsc --build",
+    "serve": "nodemon src/index.js",
+    "build": "cd client && npx next build",
     "serve:build": "node build/index.js",
     "start": "concurrently \"npm:serve\" \"cd client && npm run dev\""
   },
@@ -18,9 +18,7 @@
     "autoprefixer": "^10.4.15",
     "concurrently": "^8.2.0",
     "nodemon": "^2.0.15",
-    "postcss": "^8.4.27",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "postcss": "^8.4.27"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
