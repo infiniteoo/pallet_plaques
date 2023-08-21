@@ -3,27 +3,25 @@
 import CompleteStopGroup from "./components/CompleteStopGroup.jsx";
 import SubmitButton from "./components/SubmitButton.jsx";
 import { useState, useEffect } from "react";
-import GitHubIcon from '@mui/icons-material/GitHub';
-import GXOLogo from "./components/assets/GXO_logo.png"; // Import the logo image
+import GitHubIcon from "@mui/icons-material/GitHub";
+
 
 export default function Home() {
   const [numberOfStops, setNumberOfStops] = useState(1);
-  const [definedStops, setDefinedStops] = useState([{
-    stopNumber: 1,
-    storeName: "",
-    numberOfPallets: 0,
-    orderNumber: "",
-
-    
-
-
-  }]);
+  const [definedStops, setDefinedStops] = useState([
+    {
+      stopNumber: 1,
+      storeName: "",
+      numberOfPallets: 0,
+      orderNumber: "",
+    },
+  ]);
 
   useEffect(() => {
     if (numberOfStops > definedStops.length) {
       const newStopsCount = numberOfStops - definedStops.length;
       let newStops = [];
-  
+
       for (let i = 1; i <= newStopsCount; i++) {
         const newStop = {
           stopNumber: definedStops.length + i,
@@ -33,15 +31,14 @@ export default function Home() {
         };
         newStops.push(newStop);
       }
-  
+
       setDefinedStops((prevDefinedStops) => [...prevDefinedStops, ...newStops]);
     }
   }, [numberOfStops]);
-  
 
   useEffect(() => {
     console.log("definedStops after update", definedStops);
-    console.log("numberOfStops after update", numberOfStops)
+    console.log("numberOfStops after update", numberOfStops);
   }, [definedStops]);
 
   return (
@@ -49,7 +46,11 @@ export default function Home() {
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex flex-col">
         {/* Stylish Header */}
         <div className="flex flex-col items-center mb-8">
-          <img src={"/GXO_logo.png"} alt="GXO Logo" className="w-32 h-auto mb-2" />
+          <img
+            src={"/GXO_logo.png"}
+            alt="GXO Logo"
+            className="w-32 h-auto mb-2"
+          />
           <h1 className="text-3xl font-semibold text-gray-800 tracking-wider">
             Pallet Plaques
           </h1>
@@ -72,30 +73,23 @@ export default function Home() {
         ))}
         <SubmitButton definedStops={definedStops} />
         {/* GitHub repo link */}
-        <div className="flex items-center mt-4">
-        <GitHubIcon
-        variant="contained"
-        style={{ fontSize: "35px" }}
-        onClick={() => {
-          window.open("https://github.com/infiniteoo/pallet_plaques");
-        }}
-        /* on hover make the mouse icon change to a finger */
-        onMouseOver={(e) => {
-          e.target.style.cursor = "pointer";
-        }}
-        
+        <div
+          className="flex items-center mt-4"
+          onMouseOver={(e) => {
+            e.target.style.cursor = "pointer";
+          }}
+          onClick={() => {
+            window.open("https://github.com/infiniteoo/pallet_plaques");
+          }}
+        >
+          <GitHubIcon
+            variant="contained"
+            style={{ fontSize: "35px" }}
 
+            /* on hover make the mouse icon change to a finger */
+          ></GitHubIcon>
 
-          
-       
-      >
-        
-       
-      </GitHubIcon>
-
-         <label>
-        View on GitHub
-        </label>
+          <label className="ml-2">View on GitHub</label>
         </div>
       </div>
     </main>
