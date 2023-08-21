@@ -15,6 +15,7 @@ const PDF = ({ data }) => {
   /* loops over each object in data to create a page */
   data.forEach((item, index) => {
     for (let i = 0; i < item.numberOfPallets; i++) {
+      console.log(i)
       pages.push(
         React.createElement(
           ReactPDF.Page,
@@ -53,7 +54,7 @@ const PDF = ({ data }) => {
               React.createElement(
                 ReactPDF.Text,
                 { style: styles.paragraph },
-                "Delivery " + (i + 1) + " of " + data.length
+                "Delivery " + (index + 1) + " of " + data.length
               )
             )
           )

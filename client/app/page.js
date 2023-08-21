@@ -77,7 +77,7 @@ export default function Home() {
         variant="contained"
         style={{ fontSize: "35px" }}
         onClick={() => {
-          window.open("http://www.google.com");
+          window.open("https://github.com/infiniteoo/pallet_plaques");
         }}
         /* on hover make the mouse icon change to a finger */
         onMouseOver={(e) => {
