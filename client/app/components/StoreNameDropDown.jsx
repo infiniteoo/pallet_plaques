@@ -26,32 +26,16 @@ export default function StoreNameDropDown({
         value={selected}
         onChange={(selected) => {
           setSelected(selected);
-          console.log('STOP', stop)
-
+          console.log("STOP", stop);
 
           setDefinedStops((prevDefinedStops) => {
             const updatedStops = [...prevDefinedStops];
             updatedStops[stopIndex] = {
               ...updatedStops[stopIndex],
-              storeName: selected.name
+              storeName: selected.name,
             };
             return updatedStops;
-          })
-
-
-
-
-          /* let newStop = {
-            stopNumber: numberOfStops ? numberOfStops : 1,
-            storeName: selected.name ? selected.name : "",
-            numberOfPallets: stop.numberOfPallets ? stop.numberOfPallets : 0,
-            orderNumber: stop.orderNumber ? stop.orderNumber : "",
-          };
-
-          numberOfStops === 1 ? setDefinedStops([newStop]) : setDefinedStops([...definedStops, newStop]);  */
-
-
-          
+          });
         }}
       >
         {({ open }) => (

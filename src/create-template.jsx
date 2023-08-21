@@ -1,8 +1,10 @@
 const ReactPDF = require("@react-pdf/renderer");
 const React = require("react");
-/* const GXOLogo = require('../client/public/GXO_Logo.png') */
-
 const styles = require("./pdfStyles");
+const parseStoreInfo = require("./storeNameSplitter");
+
+
+
 
 const PDF = ({ data }) => {
   console.log("data in PDF generation: " + JSON.stringify(data));
@@ -15,7 +17,10 @@ const PDF = ({ data }) => {
   /* loops over each object in data to create a page */
   data.forEach((item, index) => {
     for (let i = 0; i < item.numberOfPallets; i++) {
-      console.log(i)
+
+      const splitStoreName = parseStoreInfo(item.storeName);
+      console.log("SPLIT STORE NAME: ",splitStoreName)
+      
       pages.push(
         React.createElement(
           ReactPDF.Page,
