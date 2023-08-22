@@ -18,7 +18,7 @@
     "concurrently": "^8.2.0",
     "encoding": "^0.1.13",
     "nodemon": "^2.0.15",
-    "postcss": "^8.4.27"
+    "postcss": "^8.4.28"
   },
   "dependencies": {
     "@react-pdf/renderer": "^2.0.21",
