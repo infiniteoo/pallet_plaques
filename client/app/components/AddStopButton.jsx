@@ -1,5 +1,5 @@
 import React from "react";
-import AddIcon from "@mui/icons-material/Add";
+/* import AddIcon from "@mui/icons-material/Add"; */
 
 const AddStopButton = ({ numberOfStops, setNumberOfStops, stop }) => {
   return (
@@ -10,7 +10,7 @@ const AddStopButton = ({ numberOfStops, setNumberOfStops, stop }) => {
       >
         Add Next Stop
       </label>
-      <AddIcon
+      {/* <AddIcon
         variant="contained"
         style={{ fontSize: "35px" }}
         onClick={() => {
@@ -19,7 +19,15 @@ const AddStopButton = ({ numberOfStops, setNumberOfStops, stop }) => {
         }}
       >
         
-      </AddIcon>
+      </AddIcon> */}
+      <button className="text-2xl"
+      onClick={() => {
+          
+        setNumberOfStops(numberOfStops + 1);
+      }}>
+      ➕
+      </button>
+    
     </div>
   );
 };

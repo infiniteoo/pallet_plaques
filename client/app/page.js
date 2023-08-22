@@ -1,9 +1,10 @@
 "use client";
 
+import { View } from "@react-pdf/renderer";
 import CompleteStopGroup from "./components/CompleteStopGroup.jsx";
 import SubmitButton from "./components/SubmitButton.jsx";
+import ViewOnGitHub from "./components/ViewOnGitHub.jsx";
 import { useState, useEffect } from "react";
-import GitHubIcon from "@mui/icons-material/GitHub";
 
 
 export default function Home() {
@@ -72,25 +73,9 @@ export default function Home() {
           </div>
         ))}
         <SubmitButton definedStops={definedStops} />
-        {/* GitHub repo link */}
-        <div
-          className="flex items-center mt-4"
-          onMouseOver={(e) => {
-            e.target.style.cursor = "pointer";
-          }}
-          onClick={() => {
-            window.open("https://github.com/infiniteoo/pallet_plaques");
-          }}
-        >
-          <GitHubIcon
-            variant="contained"
-            style={{ fontSize: "35px" }}
-
-            /* on hover make the mouse icon change to a finger */
-          ></GitHubIcon>
-
-          <label className="ml-2">View on GitHub</label>
-        </div>
+       
+        <ViewOnGitHub />
+       
       </div>
     </main>
   );
