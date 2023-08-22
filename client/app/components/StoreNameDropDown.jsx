@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import storeNames from "./storeNames.js";
 
-const EditableDropdown = ({
+const StoreNameDropDown = ({
   options,
   numberOfStops,
   setNumberOfStops,
@@ -77,4 +77,4 @@ const EditableDropdown = ({
   );
 };
 
-export default EditableDropdown;
+export default StoreNameDropDown;
