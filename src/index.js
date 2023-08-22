@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.post("/api/stops", async (req, res) => {
     try {
-        console.log("req.body", req.body);
+        
         const result = await createTemplate(req.body);
         res.setHeader("Content-Type", "application/pdf");
         res.setHeader("Content-Disposition", "attachment; filename=export.pdf");
