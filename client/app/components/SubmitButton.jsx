@@ -9,7 +9,7 @@ const SubmitButton = ({ definedStops }) => {
 
     try {
       const response = await axios.post(
-        "http://164.92.107.159/:8000/api/stops",
+        "http://localhost:8000/api/stops",
         definedStops,
         {
           responseType: "blob", // Request the response as binary data
