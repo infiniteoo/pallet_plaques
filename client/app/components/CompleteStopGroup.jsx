@@ -1,9 +1,8 @@
-
 import NumberOfPalletsDropDown from "./NumberOfPalletsDropDown";
 import OrderNumberInput from "./OrderNumberInput";
 import AddStopButton from "./AddStopButton";
 import StopNumber from "./StopNumber";
-import StoreNameDropDown from "./StoreNameDropdown";
+import StoreNameDropDown from "./StoreNameDropDown";
 import storeNames from "./storeNames.js";
 
 const CompleteStopGroup = ({
@@ -22,16 +21,14 @@ const CompleteStopGroup = ({
         setDefinedStops={setDefinedStops}
         definedStops={definedStops}
       />
-       <StoreNameDropDown
-            options={storeNames}
-            numberOfStops={numberOfStops}
-            setNumberOfStops={setNumberOfStops}
-            stop={stop}
-            setDefinedStops={setDefinedStops}
-            definedStops={definedStops}
-          />
-          
-
+      <StoreNameDropDown
+        options={storeNames}
+        numberOfStops={numberOfStops}
+        setNumberOfStops={setNumberOfStops}
+        stop={stop}
+        setDefinedStops={setDefinedStops}
+        definedStops={definedStops}
+      />
 
       <NumberOfPalletsDropDown
         numberOfStops={numberOfStops}
